@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>💌 اختبار الحب الحقيقي</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== CSS Reset ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* ===== تحسينات للموبايل ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+            
+            h1 {
+                font-size: 1.8rem !important;
+                line-height: 1.3 !important;
+            }
+            
+            h2 {
+                font-size: 1.4rem !important;
+            }
+            
+            .btn {
+                padding: 14px 20px !important;
+                font-size: 1.1rem !important;
+                min-width: unset !important;
+                width: 100% !important;
+                margin: 8px 0 !important;
+            }
+            
+            .option-btn {
+                padding: 16px !important;
+                font-size: 1.1rem !important;
+                margin: 8px 0 !important;
+            }
+            
+            .container {
+                padding: 15px !important;
+                margin: 0 !important;
+                border-radius: 0 !important;
+                min-height: 100vh !important;
+                max-width: 100% !important;
+            }
+        }
+
+        /* ===== التمرير السلس ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ===== الحاوية الرئيسية ===== */
+        .container {
+            max-width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* ===== شاشة البداية ===== */
+        .welcome-screen {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 30px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 70px;
+            margin-bottom: 20px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        /* ===== حقول الإدخال ===== */
+        .input-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ff9a9e;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #ff416c;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 65, 108, 0.1);
+        }
+
+        /* ===== الأزرار ===== */
+        .btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px 5px;
+            box-shadow: 0 5px 15px rgba(255, 65, 108, 0.3);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 54px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 65, 108, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn i {
+            font-size: 1.2rem;
+        }
+
+        /* ===== شاشة اللعبة ===== */
+        .game-screen {
+            display: none;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.45);
+            padding: 25px 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 0, 100, 0.3);
+            position: relative;
+        }
+
+        /* شريط التقدم */
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            width: 0%;
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+
+        /* الإحصائيات */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 480px) {
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-box i {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #ff416c;
+        }
+
+        .stat-value {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-top: 5px;
+            direction: ltr;
+        }
+
+        #timer {
+            color: #ffd700;
+        }
+
+        /* السؤال */
+        .question-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px 20px;
+            border-radius: 16px;
+            margin: 25px 0;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .question-number {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #ff416c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        #question {
+            font-size: 1.4rem;
+            line-height: 1.5;
+            text-align: center;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 0;
+            font-weight: 500;
+        }
+
+        /* الخيارات */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 25px 0;
+        }
+
+        .option-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
+            color: white;
+            padding: 18px 20px;
+            font-size: 1.1rem;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: right;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-height: 70px;
+        }
+
+        .option-btn:hover {
+            background: rgba(255, 65, 108, 0.2);
+            transform: translateX(-5px);
+            border-color: #ff416c;
+        }
+
+        .option-btn:active {
+            transform: translateX(-2px);
+        }
+
+        .option-btn i {
+            font-size: 1.3rem;
+            opacity: 0.7;
+            flex-shrink: 0;
+        }
+
+        /* ===== شاشة النتيجة ===== */
+        .result-screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+            color: #000;
+            padding: 30px 25px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(255, 0, 100, 0.7);
+            animation: popIn 0.4s ease-out;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .result-badge {
+            font-size: 70px;
+            margin: 15px 0;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .result-title {
+            font-size: 2rem;
+            margin: 15px 0;
+            color: #000;
+            font-weight: bold;
+            line-height: 1.3;
+        }
+
+        .result-category {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .result-desc {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 18px;
+            border-radius: 12px;
+        }
+
+        /* شبكة الإحصائيات */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 25px 0;
+        }
+
+        @media (max-width: 400px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-item .label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .stat-item .value {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* شريط القوة */
+        .power-container {
+            margin: 20px 0;
+        }
+
+        .power-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .power-bar {
+            width: 100%;
+            height: 16px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .power-fill {
+            height: 100%;
+            background: linear-gradient(to right, #4CAF50, #8BC34A);
+            border-radius: 8px;
+            transition: width 1s ease;
+        }
+
+        /* الإجراءات */
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .action-btn {
+            background: rgba(0, 0, 0, 0.2);
+            color: black;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            min-height: 50px;
+        }
+
+        .action-btn:hover {
+            background: rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* النصيحة */
+        .advice-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 18px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: right;
+        }
+
+        .advice-box h3 {
+            color: #000;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .advice-box h3 i {
+            color: #ff416c;
+        }
+
+        /* ===== التحميل ===== */
+        .loader {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid #ff416c;
+            border-radius: 50%;
+            margin: 20px auto;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ===== التنبيهات ===== */
+        .alert {
+            padding: 14px 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+            display: none;
+            text-align: right;
+            font-weight: 500;
+        }
+
+        .alert.success {
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid #4CAF50;
+            color: #a5d6a7;
+        }
+
+        .alert.error {
+            background: rgba(244, 67, 54, 0.2);
+            border: 1px solid #f44336;
+            color: #ef9a9a;
+        }
+
+        /* ===== التذييل ===== */
+        .footer {
+            margin-top: 25px;
+            color: #aaa;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        /* ===== تحسينات للمس ===== */
+        @media (hover: none) and (pointer: coarse) {
+            .btn:hover, .option-btn:hover {
+                transform: none;
+            }
+            
+            .btn:active, .option-btn:active {
+                transform: scale(0.98);
+                opacity: 0.9;
+            }
+        }
+
+        /* ===== تحسين عرض الجوال في الوضع الأفقي ===== */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .welcome-screen, .game-screen {
+                padding: 15px;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+            
+            .logo {
+                font-size: 50px;
+                margin-bottom: 10px;
+            }
+            
+            h1 {
+                font-size: 1.6rem !important;
+                margin-bottom: 10px;
+            }
+            
+            .input-group {
+                margin-bottom: 12px;
+            }
+            
+            .btn {
+                padding: 12px 20px !important;
+                min-height: 46px;
+            }
+        }
+
+        /* ===== تحسين النص للشاشات الصغيرة ===== */
+        @media (max-width: 360px) {
+            h1 {
+                font-size: 1.6rem !important;
+            }
+            
+            #question {
+                font-size: 1.2rem;
+            }
+            
+            .option-btn {
+                font-size: 1rem;
+                padding: 14px 16px;
+            }
+            
+            .result-title {
+                font-size: 1.6rem;
+            }
+            
+            .result-desc {
+                font-size: 1rem;
+                padding: 14px;
+            }
+        }
+
+        /* ===== تجنب التكبير التلقائي في حقول الإدخال ===== */
+        input {
+            font-size: 16px !important; /* يمنع التكبير في iOS */
+        }
+
+        /* ===== تخصيص شريط التمرير ===== */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ff416c;
+            border-radius: 3px;
+        }
+
+        /* ===== تأثيرات إضافية ===== */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 65, 108, 0.5); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 65, 108, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 65, 108, 0); }
+        }
+
+        /* ===== إصلاحات خاصة بالـ iOS ===== */
+        @supports (-webkit-touch-callout: none) {
+            .container {
+                min-height: -webkit-fill-available;
+            }
+            
+            .result-screen {
+                padding: env(safe-area-inset-top) env(safe-area-inset-right) 
+                         env(safe-area-inset-bottom) env(safe-area-inset-left);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- شاشة الترحيب -->
+        <div class="welcome-screen" id="welcomeScreen">
+            <div class="logo">💖</div>
+            <h1>اختبار الحب الحقيقي</h1>
+            <p class="subtitle">
+                اكتشف عمق مشاعرك وقوة علاقتك<br>
+                55 سؤالاً لتحليل علاقتك بدقة
+            </p>
+            
+            <div class="input-group">
+                <label for="userName"><i class="fas fa-user"></i> اسمك:</label>
+                <input type="text" id="userName" placeholder="أدخل اسمك" maxlength="30">
+            </div>
+            
+            <div class="input-group">
+                <label for="partnerName"><i class="fas fa-heart"></i> اسم الشريك:</label>
+                <input type="text" id="partnerName" placeholder="اسم الحبيب/الحبيبة" maxlength="30">
+            </div>
+            
+            <div class="alert success" id="successAlert">
+                <i class="fas fa-check-circle"></i> جاهز للبدء!
+            </div>
+            
+            <div class="alert error" id="errorAlert">
+                <i class="fas fa-exclamation-circle"></i> حدث خطأ
+            </div>
+            
+            <button class="btn pulse" onclick="startGame()">
+                <i class="fas fa-play-circle"></i> ابدأ الاختبار
+            </button>
+            
+            <div class="footer">
+                <i class="fas fa-shield-alt"></i> بياناتك تبقى خاصة وآمنة
+            </div>
+        </div>
+
+        <!-- شاشة التحميل -->
+        <div class="loader" id="loader">
+            <div class="spinner"></div>
+            <h3>جاري تحضير الأسئلة...</h3>
+            <p>تجهيز رحلة عاطفية ممتعة</p>
+        </div>
+
+        <!-- شاشة اللعبة -->
+        <div class="game-screen" id="gameScreen">
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-box">
+                    <i class="fas fa-heart"></i>
+                    <div>النقاط</div>
+                    <div class="stat-value" id="score">0</div>
+                </div>
+               
+                <div class="stat-box">
+                    <i class="fas fa-question-circle"></i>
+                    <div>السؤال</div>
+                    <div class="stat-value" id="questionNumber">1/55</div>
+                </div>
+               
+            </div>
+            
+            <div class="question-box">
+                <div class="question-number">سؤال</div>
+                <div id="question">جاري تحميل السؤال...</div>
+            </div>
+            
+            <div class="options">
+                <button class="option-btn" onclick="answerQuestion(0)" id="option1">
+                    <i class="fas fa-circle"></i>
+                    <span id="option1Text">الخيار الأول</span>
+                </button>
+                <button class="option-btn" onclick="answerQuestion(1)" id="option2">
+                    <i class="fas fa-circle"></i>
+                    <span id="option2Text">الخيار الثاني</span>
+                </button>
+            </div>
+            
+            <div class="footer">
+                <i class="fas fa-info-circle"></i> اختر الإجابة الأقرب لمشاعرك
+            </div>
+        </div>
+    </div>
+
+    <!-- شاشة النتيجة -->
+    <div class="result-screen" id="resultScreen">
+        <div class="result-card" id="resultCard">
+            <!-- سيتم تعبئة النتيجة هنا -->
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // 1. أسئلة الاختبار الكاملة (55 سؤالاً)
+        // ============================================
+        const questions = [
+            {q:"لو زعلت منك فجأة؟", o:["بتركك لحالك","بحكي معك فوراً"], v:[-5,10]},
+            {q:"بتغاري عليّ؟", o:["شوي","كثير 😈"], v:[5,10]},
+            {q:"لو تأخرت بالرد؟", o:["عادي","أقلق"], v:[5,10]},
+            {q:"بتحبي المفاجآت؟", o:["لا","أكيد"], v:[5,10]},
+            {q:"بتسامحي بسهولة؟", o:["حسب","إي"], v:[5,10]},
+            {q:"لو صار خلاف؟", o:["أهرب","نحلّه"], v:[-5,10]},
+            {q:"بتآمني بالحب؟", o:["يمكن","أكيد"], v:[5,10]},
+            {q:"الغيرة عندك؟", o:["قليلة","نار 🔥"], v:[5,10]},
+            {q:"بتحبي الاهتمام؟", o:["عادي","كثير"], v:[5,10]},
+            {q:"لو قلتلك اشتقت؟", o:["أضحك","أذوب"], v:[5,10]},
+            {q:"رأيك في الاعتذار؟", o:["صعب","ضروري"], v:[5,10]},
+            {q:"الرومانسية عندك؟", o:["قليلة","أساسية"], v:[5,10]},
+            {q:"أكثر شيء يخيفك في العلاقة؟", o:["الملل","الخيانة"], v:[5,10]},
+            {q:"هل تثق/تثقين بي؟", o:["ليس تماماً","تماماً"], v:[5,10]},
+            {q:"كيف تواجه المشاكل؟", o:["أحتاج وقت","أواجهها مباشرة"], v:[5,10]},
+            {q:"ما دور الصدق في العلاقة؟", o:["مهم","أهم شيء"], v:[5,10]},
+            {q:"كيف تكون العلاقة المثالية؟", o:["ودودة","عاطفية جداً"], v:[5,10]},
+            {q:"ما رأيك في مساحة شخصية؟", o:["مهمة","مهمة ولكن ضمن حدود"], v:[5,10]},
+            {q:"كيف تظهر حبك؟", o:["بالكلمات","بالأفعال"], v:[5,10]},
+            {q:"كيف تتعامل مع أخطائي؟", o:["أنتقدك","أساعدك"], v:[5,10]},
+            {q:"ما معنى الالتزام؟", o:["واجب","اختيار سعيد"], v:[5,10]},
+            {q:"كيف تقضي وقتك مع الحبيب؟", o:["أشياء بسيطة","مغامرات"], v:[5,10]},
+            {q:"أهم صفة في شريك الحياة؟", o:["الأمانة","الوفاء"], v:[5,10]},
+            {q:"كيف تعبر عن غضبك؟", o:["أصمت","أتحدث بهدوء"], v:[5,10]},
+            {q:"ما رأيك في المصالحة بعد الشجار؟", o:["تحتاج وقت","سريعة"], v:[5,10]},
+            {q:"هل تؤمن/تؤمنين بالحب من أول نظرة؟", o:["لا","نعم"], v:[5,10]},
+            {q:"كيف تدافع عن علاقتك؟", o:["بهدوء","بشدة"], v:[5,10]},
+            {q:"ما دور العائلة في علاقتك؟", o:["مهم","لا تأثير"], v:[5,10]},
+            {q:"كيف تتعامل مع انتقادات الآخرين؟", o:["أهمها","لا أهتم"], v:[5,10]},
+            {q:"هل تغير/تغيرين من نفسك لأجل حبيبك؟", o:["لا","نعم ضمن حدود"], v:[5,10]},
+            {q:"ما أهمية الصداقة في العلاقة؟", o:["عادية","مهمة جداً"], v:[5,10]},
+            {q:"كيف تتعامل مع اختلاف الآراء؟", o:["أصغي لرأيك","أصر على رأيي"], v:[5,10]},
+            {q:"ما رأيك في المنافسة في الحب؟", o:["غير صحية","تحفز"], v:[5,10]},
+            {q:"كيف تتعامل مع نجاح حبيبك؟", o:["أشجعه","أشعر بالغيرة"], v:[5,10]},
+            {q:"ما دور الفكاهة في العلاقة؟", o:["مهم","ضروري"], v:[5,10]},
+            {q:"كيف تظهر اهتمامك بيوم حبيبك؟", o:["أسأل","أفعل شيئاً مميزاً"], v:[5,10]},
+            {q:"ما رأيك في العلاقات الطويلة؟", o:["جميلة","صعبة"], v:[5,10]},
+            {q:"كيف تواسي الحبيب في حزنه؟", o:["أصغي","أعطيه مساحة"], v:[5,10]},
+            {q:"ما أهمية التوافق الفكري؟", o:["مهم","أهم من المشاعر"], v:[5,10]},
+            {q:"كيف تتعامل مع عيوب الحبيب؟", o:["أتقبلها","أحاول تغييرها"], v:[5,10]},
+            {q:"ما رأيك في المفاجآت؟", o:["أحبها","لا أحبذها"], v:[5,10]},
+            {q:"كيف تتعامل مع غيرة الحبيب؟", o:["أطمئنه","أشعره بالثقة"], v:[5,10]},
+            {q:"ما أهمية المشاعر في العلاقة؟", o:["مهمة","هي الأساس"], v:[5,10]},
+            {q:"كيف تحل الخلافات؟", o:["بالهدوء","بالحوار"], v:[5,10]},
+            {q:"ما رأيك في الاعتماد العاطفي؟", o:["صحي","غير صحي"], v:[5,10]},
+            {q:"كيف تحتفل بالمناسبات؟", o:["ببساطة","بإبهار"], v:[5,10]},
+            {q:"ما أهمية التواصل اليومي؟", o:["مهم","ضروري"], v:[5,10]},
+            {q:"كيف تتعامل مع ضغوط الحياة؟", o:["بمساعدة الحبيب","وحدي"], v:[5,10]},
+            {q:"ما رأيك في التغيير من أجل الحبيب؟", o:["مقبول ضمن حدود","غير مقبول"], v:[5,10]},
+            {q:"كيف تعبر عن امتنانك؟", o:["بالكلام","بالهدايا"], v:[5,10]},
+            {q:"ما أهمية الذكريات؟", o:["جميلة","تبني المستقبل"], v:[5,10]},
+            {q:"كيف تتعامل مع الملل؟", o:["أخلق شيئاً جديداً","أتقبله"], v:[5,10]},
+            {q:"ما رأيك في العلاقة عن بعد؟", o:["صعبة","ممكنة مع الثقة"], v:[5,10]},
+            {q:"كيف تتعامل مع نجاحاتك؟", o:["أشاركها","أحتفل وحدي"], v:[5,10]},
+            {q:"هل ترى/ترين نفسك معي بالمستقبل؟", o:["لست متأكد/ة","أكيد ❤️"], v:[5,10]}
+        ];
+
+        // ============================================
+        // 2. المتغيرات العامة
+        // ============================================
+        let currentQuestion = 0;
+        let score = 0;
+        let timeLeft = 8;
+        let timerInterval;
+        let gameStarted = false;
+        let userAnswers = [];
+        
+        // بيانات المستخدم
+        let userName = "";
+        let partnerName = "";
+        
+        // ============================================
+        // 3. عناصر DOM
+        // ============================================
+        const welcomeScreen = document.getElementById('welcomeScreen');
+        const loader = document.getElementById('loader');
+        const gameScreen = document.getElementById('gameScreen');
+        const resultScreen = document.getElementById('resultScreen');
+        const resultCard = document.getElementById('resultCard');
+        
+        const scoreElement = document.getElementById('score');
+        const timerElement = document.getElementById('timer');
+        const questionNumber = document.getElementById('questionNumber');
+        const questionElement = document.getElementById('question');
+        const option1Text = document.getElementById('option1Text');
+        const option2Text = document.getElementById('option2Text');
+        const progressBar = document.getElementById('progressBar');
+        const levelElement = document.getElementById('level');
+
+        // ============================================
+        // 4. دوال النظام الأساسية
+        // ============================================
+        
+        // بدء اللعبة
+        function startGame() {
+            userName = document.getElementById('userName').value.trim();
+            partnerName = document.getElementById('partnerName').value.trim();
+            
+            if (!userName || !partnerName) {
+                showError("الرجاء إدخال اسمك واسم شريكك");
+                return;
+            }
+            
+            if (userName.length < 2 || partnerName.length < 2) {
+                showError("الرجاء إدخال أسماء صحيحة (على الأقل حرفين)");
+                return;
+            }
+            
+            // إخفاء شاشة الترحيب وإظهار التحميل
+            welcomeScreen.style.display = 'none';
+            loader.style.display = 'block';
+            
+            // محاكاة التحميل
+            setTimeout(() => {
+                loader.style.display = 'none';
+                gameScreen.style.display = 'block';
+                gameStarted = true;
+                loadQuestion();
+            }, 1500);
+        }
+        
+        // تحميل السؤال الحالي
+        function loadQuestion() {
+            if (currentQuestion >= questions.length) {
+                endGame();
+                return;
+            }
+            
+            // الحصول على السؤال الحالي
+            const question = questions[currentQuestion];
+            
+            // تحديث واجهة المستخدم
+            questionElement.textContent = question.q;
+            option1Text.textContent = question.o[0];
+            option2Text.textContent = question.o[1];
+            questionNumber.textContent = `${currentQuestion + 1}/55`;
+            
+            // تحديث شريط التقدم
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            
+            // تحديث المستوى الحالي
+            updateLevel();
+            
+            // إعادة تعيين المؤقت
+            resetTimer();
+        }
+        
+        // إعادة تعيين المؤقت
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timeLeft = 8;
+            timerElement.textContent = timeLeft;
+            
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                timerElement.textContent = timeLeft;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    // تخطي السؤال عند انتهاء الوقت
+                    userAnswers.push({
+                        question: questions[currentQuestion].q,
+                        answer: "انتهى الوقت",
+                        points: 0,
+                        questionNumber: currentQuestion + 1
+                    });
+                    currentQuestion++;
+                    loadQuestion();
+                }
+            }, 1000);
+        }
+        
+        // تحديث مستوى اللاعب
+        function updateLevel() {
+            const percentage = (score / (currentQuestion * 10)) * 100 || 0;
+            let level;
+            
+            if (percentage >= 90) level = "أسطوري 💎";
+            else if (percentage >= 80) level = "متقدم ⭐";
+            else if (percentage >= 70) level = "جيد 👍";
+            else if (percentage >= 60) level = "مقبول 👌";
+            else level = "مبتدئ 🌱";
+            
+            levelElement.textContent = level;
+        }
+        
+        // الإجابة على السؤال
+        function answerQuestion(optionIndex) {
+            if (!gameStarted) return;
+            
+            clearInterval(timerInterval);
+            
+            const question = questions[currentQuestion];
+            const points = question.v[optionIndex];
+            
+            // تحديث النقاط
+            score += points;
+            scoreElement.textContent = score;
+            
+            // حفظ الإجابة
+            userAnswers.push({
+                question: question.q,
+                answer: question.o[optionIndex],
+                points: points,
+                questionNumber: currentQuestion + 1,
+                timestamp: new Date().toISOString()
+            });
+            
+            // الانتقال للسؤال التالي
+            currentQuestion++;
+            loadQuestion();
+        }
+        
+        // إنهاء اللعبة
+        async function endGame() {
+            gameScreen.style.display = 'none';
+            resultScreen.style.display = 'flex';
+            
+            // حساب النتيجة النهائية
+            const result = calculateResult(score);
+            
+            // عرض النتيجة
+            displayResult(result);
+            
+            // حفظ النتيجة في ملف JSON
+            saveResultToJSON(result);
+        }
+        
+        // حساب النتيجة
+        function calculateResult(score) {
+            const percentage = (score / 550) * 100;
+            const maxPossible = 550;
+            
+            let title, emoji, category, description, advice, level;
+            
+            if (percentage >= 90) {
+                level = 5;
+                category = "الأسطوري";
+                emoji = "💎👑";
+                title = "حب خارق للعادة ✨";
+                description = "علاقة نادرة تتجاوز مفهوم الحب العادي. أنتما كشخصين بقلب واحد، تفهمان بعضكما بدون كلمات. هذه العلاقة بنيت على أسس روحية عميقة.";
+                advice = "حافظوا على هذه النعمة بالتواصل المستمر وتجديد المشاعر باستمرار.";
+            } else if (percentage >= 80) {
+                level = 4;
+                category = "المتوهج";
+                emoji = "🔥💖";
+                title = "عشق متقد 🔥";
+                description = "علاقة مليئة بالحيوية والمشاعر القوية. توجد بينكم كيمياء واضحة واهتمام متبادل يجعل العلاقة دافئة ومثيرة.";
+                advice = "حافظوا على لهيب هذا الحب بتجديد الرومانسية والمفاجآت.";
+            } else if (percentage >= 70) {
+                level = 3;
+                category = "المتزن";
+                emoji = "❤️🤝";
+                title = "حب متين 🤝";
+                description = "علاقة صحية ومتوازنة، تقوم على الصدق والاحترام المتبادل. أنتما تبنيان مستقبلكما بثبات ووعي.";
+                advice = "استمروا في البناء على هذا الأساس المتين، مستقبلكما واعد.";
+            } else if (percentage >= 60) {
+                level = 2;
+                category = "المتردد";
+                emoji = "💔😔";
+                title = "حب يحتاج جهد 💪";
+                description = "توجد مشاعر حقيقية لكنها تحتاج إلى مزيد من الوضوح والثقة. قد يكون هناك بعض الشكوك أو المخاوف التي تحتاج إلى معالجة.";
+                advice = "راجعوا أسباب علاقتكم وتحدثوا بصراحة عن مخاوفكم وتوقعاتكم.";
+            } else if (percentage >= 50) {
+                level = 1;
+                category = "الضعيف";
+                emoji = "😢💧";
+                title = "حب يحتاج إحياء 💓";
+                description = "العلاقة تمر بأزمة حقيقية وتحتاج إلى تدخل سريع وجدي. قد تكون هناك مشاكل عميقة في الثقة أو التواصل.";
+                advice = "فكروا جيدًا إذا كانت العلاقة تستحق البقاء، واستشيروا القلب والعقل معًا.";
+            } else {
+                level = 0;
+                category = "المنتهي";
+                emoji = "⚰️☠️";
+                title = "حب منتهي صلاحيته 🗑️";
+                description = "العلاقة وصلت إلى نقطة اللاعودة. الأفضل التفكير في إنهائها بشكل محترم والبدء من جديد.";
+                advice = "انهوا العلاقة باحترام وخذوا وقتًا للتعافي قبل البدء من جديد.";
+            }
+            
+            return {
+                title,
+                emoji,
+                category,
+                description,
+                advice,
+                level,
+                score,
+                percentage: percentage.toFixed(1),
+                maxPossible,
+                userName,
+                partnerName,
+                answers: userAnswers,
+                totalQuestions: questions.length,
+                date: new Date().toLocaleString('ar-EG')
+            };
+        }
+        
+        // عرض النتيجة
+        function displayResult(result) {
+            resultCard.innerHTML = `
+                <div class="result-badge">${result.emoji}</div>
+                <h1 class="result-title">${result.title}</h1>
+                <div class="result-category">${result.category}</div>
+                
+                <div class="result-desc">
+                    ${result.description}
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="label">👤 المستخدم</div>
+                        <div class="value">${result.userName}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">💞 الشريك</div>
+                        <div class="value">${result.partnerName}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">🎯 النقاط</div>
+                        <div class="value">${result.score}/${result.maxPossible}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">📊 النسبة</div>
+                        <div class="value">${result.percentage}%</div>
+                    </div>
+                </div>
+                
+                <div class="power-container">
+                    <div class="power-label">
+                        <span>قوة العلاقة:</span>
+                        <span>${result.level * 20}%</span>
+                    </div>
+                    <div class="power-bar">
+                        <div class="power-fill" style="width: ${result.level * 20}%"></div>
+                    </div>
+                </div>
+                
+                <div class="advice-box">
+                    <h3><i class="fas fa-lightbulb"></i> نصيحة:</h3>
+                    <p>${result.advice}</p>
+                </div>
+                
+                <div class="actions">
+                    <button class="action-btn" onclick="shareResult()">
+                        <i class="fas fa-share-alt"></i> مشاركة
+                    </button>
+                  
+                    <button class="action-btn" onclick="restartGame()" style="background: linear-gradient(45deg, #4CAF50, #2E7D32);">
+                        <i class="fas fa-redo"></i> اختبار جديد
+                    </button>
+                </div>
+                
+               
+            `;
+        }
+        
+        // ============================================
+        // 5. حفظ النتائج في ملف JSON
+        // ============================================
+        function saveResultToJSON(result) {
+            try {
+                // إنشاء كائن JSON كامل
+                const resultData = {
+                    testInfo: {
+                        name: "اختبار الحب الحقيقي",
+                        version: "1.0",
+                        date: new Date().toISOString(),
+                        totalQuestions: result.totalQuestions,
+                        maxScore: result.maxPossible
+                    },
+                    userInfo: {
+                        userName: result.userName,
+                        partnerName: result.partnerName,
+                        testDate: result.date
+                    },
+                    results: {
+                        score: result.score,
+                        percentage: result.percentage,
+                        category: result.category,
+                        level: result.level,
+                        title: result.title,
+                        description: result.description,
+                        advice: result.advice
+                    },
+                    detailedAnswers: result.answers,
+                    summary: {
+                        totalCorrect: result.answers.filter(a => a.points >= 5).length,
+                        totalIncorrect: result.answers.filter(a => a.points < 0).length,
+                        totalNeutral: result.answers.filter(a => a.points >= 0 && a.points < 5).length,
+                        averagePoints: (result.score / result.answers.length).toFixed(2)
+                    }
+                };
+                
+                // حفظ في localStorage كنسخة احتياطية
+                const savedResults = JSON.parse(localStorage.getItem('loveTestResults')) || [];
+                savedResults.push(resultData);
+                localStorage.setItem('loveTestResults', JSON.stringify(savedResults));
+                
+                // حفظ في ملف JSON للتحميل
+                const jsonString = JSON.stringify(resultData, null, 2);
+                localStorage.setItem('lastResultJSON', jsonString);
+                
+                console.log("✅ تم حفظ النتيجة في JSON");
+                showSuccess("تم حفظ نتائجك بنجاح!");
+                
+                return resultData;
+                
+            } catch (error) {
+                console.error("❌ خطأ في حفظ JSON:", error);
+                showError("حدث خطأ في حفظ النتائج");
+                return null;
+            }
+        }
+        
+        // تحميل ملف JSON
+        function downloadJSON() {
+            try {
+                const jsonData = localStorage.getItem('lastResultJSON');
+                if (!jsonData) {
+                    showError("لا توجد نتائج لحفظها");
+                    return;
+                }
+                
+                // إنشاء اسم ملف
+                const fileName = `نتيجة_اختبار_الحب_${userName}_${new Date().toISOString().slice(0,10)}.json`;
+                
+                // إنشاء blob وروابط التحميل
+                const blob = new Blob([jsonData], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                
+                a.href = url;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                
+                showSuccess("تم تحميل ملف JSON بنجاح!");
+                
+            } catch (error) {
+                console.error("❌ خطأ في تحميل JSON:", error);
+                showError("حدث خطأ في تحميل الملف");
+            }
+        }
+        
+        // مشاركة النتيجة
+        function shareResult() {
+            const shareText = `حصلت على ${score} نقطة في اختبار الحب الحقيقي! جرب الاختبار الآن.`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'نتيجة اختبار الحب',
+                    text: shareText,
+                    url: window.location.href
+                });
+            } else {
+                // نسخ الرابط
+                navigator.clipboard.writeText(shareText + " " + window.location.href)
+                    .then(() => {
+                        showSuccess("تم نسخ النتيجة إلى الحافظة!");
+                    })
+                    .catch(() => {
+                        // عرض نص للمستخدم لنسخه يدوياً
+                        const textToCopy = `${shareText}\n${window.location.href}`;
+                        prompt("انسخ النص التالي لمشاركة نتيجتك:", textToCopy);
+                    });
+            }
+        }
+        
+        // إعادة تشغيل اللعبة
+        function restartGame() {
+            // إعادة تعيين المتغيرات
+            currentQuestion = 0;
+            score = 0;
+            timeLeft = 8;
+            userAnswers = [];
+            
+            // إعادة تعيين العرض
+            scoreElement.textContent = "0";
+            progressBar.style.width = "0%";
+            levelElement.textContent = "-";
+            
+            // إغلاق شاشة النتيجة والعودة للبداية
+            resultScreen.style.display = 'none';
+            welcomeScreen.style.display = 'block';
+            
+            // مسح البيانات القديمة (اختياري)
+            document.getElementById('userName').value = "";
+            document.getElementById('partnerName').value = "";
+        }
+        
+        // ============================================
+        // 6. دوال مساعدة
+        // ============================================
+        function showError(message) {
+            const errorAlert = document.getElementById('errorAlert');
+            errorAlert.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${message}`;
+            errorAlert.style.display = 'block';
+            
+            setTimeout(() => {
+                errorAlert.style.display = 'none';
+            }, 4000);
+        }
+        
+        function showSuccess(message) {
+            const successAlert = document.getElementById('successAlert');
+            successAlert.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
+            successAlert.style.display = 'block';
+            
+            setTimeout(() => {
+                successAlert.style.display = 'none';
+            }, 4000);
+        }
+        
+        // ============================================
+        // 7. تهيئة التطبيق
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            // التحقق من وجود نتائج سابقة
+            const savedResults = localStorage.getItem('loveTestResults');
+            if (savedResults) {
+                const results = JSON.parse(savedResults);
+                console.log(`📊 يوجد ${results.length} نتيجة محفوظة سابقاً`);
+            }
+            
+            // منع التكبير في حقول الإدخال على iOS
+            document.querySelectorAll('input').forEach(input => {
+                input.addEventListener('focus', function() {
+                    window.scrollTo(0, 0);
+                    document.body.scrollTop = 0;
+                });
+            });
+            
+            // إصلاح للوضع الأفقي على الجوال
+            window.addEventListener('orientationchange', function() {
+                setTimeout(() => {
+                    window.scrollTo(0, 0);
+                }, 100);
+            });
+            
+            console.log("🌟 اختبار الحب الحقيقي - جاهز للاستخدام!");
+        });
+
+        // ============================================
+        // 8. وظائف إضافية لتجربة مستخدم أفضل
+        // ============================================
+        
+        // عرض كل النتائج المحفوظة
+        function viewAllResults() {
+            const savedResults = JSON.parse(localStorage.getItem('loveTestResults')) || [];
+            
+            if (savedResults.length === 0) {
+                alert("لا توجد نتائج محفوظة");
+                return;
+            }
+            
+            let resultsHtml = "<h3>📋 النتائج المحفوظة:</h3>";
+            
+            savedResults.forEach((result, index) => {
+                resultsHtml += `
+                    <div style="background: rgba(255,255,255,0.2); padding: 15px; margin: 10px 0; border-radius: 10px;">
+                        <strong>الاختبار ${index + 1}:</strong> ${result.userInfo.userName} مع ${result.userInfo.partnerName}<br>
+                        <span>النتيجة: ${result.results.score} نقطة (${result.results.percentage}%)</span><br>
+                        <small>${result.userInfo.testDate}</small>
+                    </div>
+                `;
+            });
+            
+            resultCard.innerHTML += resultsHtml;
+        }
+        
+        // مسح كل النتائج المحفوظة
+        function clearAllResults() {
+            if (confirm("هل أنت متأكد من مسح كل النتائج المحفوظة؟")) {
+                localStorage.removeItem('loveTestResults');
+                localStorage.removeItem('lastResultJSON');
+                showSuccess("تم مسح جميع النتائج بنجاح");
+                restartGame();
+            }
+        }
+    </script>
+</body>
+</html>
